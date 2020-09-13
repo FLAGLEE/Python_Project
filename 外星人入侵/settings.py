@@ -12,7 +12,6 @@ class Settings():
         self.ship_limit = 3
 
         # 外星人设置
-        self.fleet_drop_speed = 10
 
         # 子弹的设置
         self.bullet_width = 3
@@ -33,6 +32,8 @@ class Settings():
         self.alien_speed_factor = 1
         self.bullet_speed_factor = 3
 
+        self.fleet_drop_speed = 10
+
         # fleet_direction为1表示向右移， 为-1表示向左移
         self.fleet_direction = 1
 
@@ -44,5 +45,6 @@ class Settings():
         self.ship_speed_factor *= self.speedup_scale
         self.alien_speed_factor *= self.speedup_scale
         self.bullet_speed_factor *= self.speedup_scale
+        self.fleet_drop_speed *= self.speedup_scale
 
         self.alien_score = int(self.alien_score * self.score_scale)

@@ -207,7 +207,7 @@ def update_aliens(ai_settings, stats, screen, sb, ship, aliens, bullets):
         ship_hit(ai_settings, stats, screen, sb, ship, aliens, bullets)
 
     # 检查是否有外星人到达屏幕底端
-    check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets)
+    check_aliens_bottom(ai_settings, stats, screen, sb, ship, aliens, bullets)
 
 
 def update_bullets(ai_settings, screen, stats, sb, ship, aliens, bullets):
@@ -246,13 +246,13 @@ def check_bullet_alien_collisions(ai_settings, screen, stats, sb, ship, aliens, 
         create_fleet(ai_settings, screen, ship, aliens)
 
 
-def check_aliens_bottom(ai_settings, stats, screen, ship, aliens, bullets):
+def check_aliens_bottom(ai_settings, stats, screen, sb, ship, aliens, bullets):
     """检查是否有外星人到达了屏幕底端"""
     screen_rect = screen.get_rect()
     for alien in aliens.sprites():
         if alien.rect.bottom >= screen_rect.bottom:
             # 像飞船被撞到一样进行处理
-            ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
+            ship_hit(ai_settings, stats, screen, sb, ship, aliens, bullets)
             break
 
 
